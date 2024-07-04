@@ -27,7 +27,7 @@ if response['status'] == 'ok':
     articles = []
     for article in response['articles']:
         title = article.get('title')
-        print("parsing qrticle out of response")
+        print("parsing article out of response")
         url = article.get('url')
         published_at = article.get('publishedAt')
         # Lade den vollständigen Artikelinhalt von der URL
@@ -36,7 +36,7 @@ if response['status'] == 'ok':
             soup = BeautifulSoup(page.content, 'html.parser')
             paragraphs = soup.find_all('p')
             full_content = '\n'.join([para.get_text() for para in paragraphs])
-            if len(full_content) < 30 or len(full_content) > 5000:
+            if len(full_content) < 50 or len(full_content) > 10000:
                 continue
             save_article(title, published_at, full_content, LANGUAGE)
             #save_raw_article(title, published_at, full_content, LANGUAGE)
