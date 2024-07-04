@@ -9,11 +9,11 @@ def detect_language(text):
         # Detect the language of the input text
         detected_lang = detect(text)
         lang_map = {
-            'en': 'en',
-            'de': 'de',
-            'bg': 'bg'
+            'de': 'German',
+            'en': 'English',
+            'bg': 'Bulgarian'
         }
-        # Returns "en", "de", "bg" or "unknown" for a language that could not be detected
+        # Return either "Bulgarian", "German", "English" or "Unknown" if it isn't one of the three languages.
         return lang_map.get(detected_lang, 'Unknown')
     except LangDetectException:
         return 'Unknown'

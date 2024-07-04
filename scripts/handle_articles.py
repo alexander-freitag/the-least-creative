@@ -20,8 +20,8 @@ def get_last_article():
     
     # Get all the file names from the directories that are json
     en_files = [f for f in os.listdir(en_dir) if f.endswith('.json')]
-    de_files = [f for f in os.listdir(de_dir) if f.endswith('.json')]
     bg_files = [f for f in os.listdir(bg_dir) if f.endswith('.json')]
+    de_files = [f for f in os.listdir(de_dir) if f.endswith('.json')]
 
     # Combine all three lists into one array
     files = en_files + bg_files + de_files
