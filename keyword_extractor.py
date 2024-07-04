@@ -28,6 +28,9 @@ def extract_keywords_ollama(text):
     return keywords
 
 
+def extract_keywords(text):
+    return extract_keywords_ollama(text)
+
 # import torch
 # from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer
 

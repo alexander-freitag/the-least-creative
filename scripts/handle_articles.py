@@ -1,6 +1,7 @@
 import json
 import os
-
+from translation import translate_bulgarian_to_english, translate_german_to_english
+from keyword_extractor import extract_keywords
 
 # Define the directories
 en_dir = 'data/articles/en/'
@@ -37,7 +38,7 @@ def get_last_article():
         return 0
 
 
-def save_article(title, timestamp, content, keywords, language):
+def save_article(title, timestamp, content, language):
     # Test if title is of type string
     if not isinstance(title, str):
         raise TypeError("Title must be a string.")
@@ -49,10 +50,6 @@ def save_article(title, timestamp, content, keywords, language):
     # Test if content is of type string
     if not isinstance(content, str):
         raise TypeError("Content must be a string.")
-    
-    # Test if keywords is of type list
-    if not isinstance(keywords, list):
-        raise TypeError("Keywords must be a list.")
     
     # Test if language is valid
     if language not in ['en', 'bg', 'de']:
@@ -67,16 +64,22 @@ def save_article(title, timestamp, content, keywords, language):
     # Choose the directory based on the language
     if language == 'en':
         directory = en_dir
+        translation = content
     elif language == 'bg':
         directory = bg_dir
+        translation = translate_bulgarian_to_english(content)
     elif language == 'de':
         directory = de_dir
+        translation = translate_german_to_english(content)
     else:
         raise ValueError("Language must be 'en', 'bg', or 'de'.")
     
     # Create the file path
     file_path = f'{directory}{new_id}.json'
-    
+
+    # Extract keywords from the content 
+    keywords = extract_keywords(translation)
+
     # Create the JSON data
     data = {
         'id': new_id,
@@ -159,7 +162,7 @@ def add_keywords(file_id, keywords):
     article_data['keywords'].extend(keywords)
 
     # Create the file path
-    file_path = f'{article_data['language']}{file_id}.json'
+    file_path = f'{article_data["language"]}{file_id}.json'
 
     # Save the updated article data to the file
     with open(file_path, 'w') as file:
