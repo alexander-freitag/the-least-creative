@@ -25,6 +25,8 @@ def split_text_by_periods(text, num_periods=5):
         chunks.append(chunk)
 
     return chunks
+
+
 # Function to translate German text to English
 def translate_german_to_english(german_text):
     translated_text = []
@@ -41,4 +43,5 @@ def translate_bulgarian_to_english(bulgarian_text):
     return "".join(e[0]['translation_text'] for e in translated_text)
 
 
-print(translate_german_to_english("Der Frühling ist die schönste Jahreszeit. Wenn die Tage länger werden und die Sonne wärmer scheint, erwacht die Natur zu neuem Leben. Die Bäume bekommen frische grüne Blätter, und überall blühen Blumen in den schönsten Farben. Die Vögel kehren aus ihren Winterquartieren zurück und beginnen mit ihrem fröhlichen Gesang. Überall summen Bienen und Schmetterlinge flattern von Blüte zu Blüte. In dieser Zeit genießen viele Menschen die ersten warmen Tage im Freien. Man unternimmt Spaziergänge im Park oder in der Natur, fährt mit dem Fahrrad oder trifft sich mit Freunden zum Grillen im Garten. Die Kinder spielen wieder draußen, rennen über Wiesen und bauen Sandburgen im Sandkasten. Auch die ersten Ausflüge zum nahegelegenen See oder ins Schwimmbad stehen auf dem Programm. Nicht nur die Menschen freuen sich über das Erwachen der Natur. Auch die Tiere sind aktiver und man kann häufig Hasen, Rehe und andere Wildtiere beobachten. Besonders in den frühen Morgenstunden oder in der Dämmerung sieht man sie auf den Feldern und im Wald. Die Tierkinder kommen zur Welt, und es ist ein besonderes Erlebnis, die jungen Rehe oder Fohlen beim Spielen zu beobachten. Der Frühling ist aber auch eine Zeit des Neubeginns und der Erneuerung. Viele Menschen nutzen diese Jahreszeit,"))
+print(translate_german_to_english(
+    "Der Frühling ist die schönste Jahreszeit. Wenn die Tage länger werden und die Sonne wärmer scheint, erwacht die Natur zu neuem Leben. Die Bäume bekommen frische grüne Blätter, und überall blühen Blumen in den schönsten Farben. Die Vögel kehren aus ihren Winterquartieren zurück und beginnen mit ihrem fröhlichen Gesang. Überall summen Bienen und Schmetterlinge flattern von Blüte zu Blüte. In dieser Zeit genießen viele Menschen die ersten warmen Tage im Freien. Man unternimmt Spaziergänge im Park oder in der Natur, fährt mit dem Fahrrad oder trifft sich mit Freunden zum Grillen im Garten. Die Kinder spielen wieder draußen, rennen über Wiesen und bauen Sandburgen im Sandkasten. Auch die ersten Ausflüge zum nahegelegenen See oder ins Schwimmbad stehen auf dem Programm. Nicht nur die Menschen freuen sich über das Erwachen der Natur. Auch die Tiere sind aktiver und man kann häufig Hasen, Rehe und andere Wildtiere beobachten. Besonders in den frühen Morgenstunden oder in der Dämmerung sieht man sie auf den Feldern und im Wald. Die Tierkinder kommen zur Welt, und es ist ein besonderes Erlebnis, die jungen Rehe oder Fohlen beim Spielen zu beobachten. Der Frühling ist aber auch eine Zeit des Neubeginns und der Erneuerung. Viele Menschen nutzen diese Jahreszeit,"))
