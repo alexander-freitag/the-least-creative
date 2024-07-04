@@ -39,6 +39,7 @@ def get_last_article():
 
 
 def save_article(title, timestamp, content, language):
+    print("save article")
     # Test if title is of type string
     if not isinstance(title, str):
         raise TypeError("Title must be a string.")
@@ -79,7 +80,7 @@ def save_article(title, timestamp, content, language):
 
     # Extract keywords from the content 
     keywords = extract_keywords(translation)
-
+    print(keywords)
     # Create the JSON data
     data = {
         'id': new_id,
