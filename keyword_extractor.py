@@ -23,7 +23,7 @@ def extract_keywords_ollama(text):
     keywords_response = keywords_response["response"]
 
     # Extracting keywords from the response
-    keywords = keywords_response.split(", ")
+    keywords = [keyword.strip() for keyword in keywords_response.split(",")]
 
     return keywords
 
