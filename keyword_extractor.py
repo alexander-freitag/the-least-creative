@@ -8,7 +8,7 @@ def extract_keywords_ollama(text):
         "model": "llama3",
         "prompt": "User Query: " + text,
         "system": """
-            You will reacieve a user query in English.
+            You will receive a user query in English.
             Enhance the search query to ensure it is clear, context-rich, and unbiased.
             Additionally, identify and extract the most relevant tags related to the query.
             Return only the generated tags on the first line and on one line, separated by commas.
