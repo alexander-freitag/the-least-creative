@@ -7,7 +7,7 @@ import requests
 from keyword_extractor import extract_keywords_ollama
 from scripts.handle_articles import save_article, save_raw_article
 
-NEWS_API_KEY = "6cf94ce4aa374f73afc2c4aca4a655e8"
+NEWS_API_KEY = "906dfbcb405b487d8e61393e5fe929de"
 LANGUAGE = 'de'
 # Init
 newsapi = NewsApiClient(api_key=NEWS_API_KEY)
