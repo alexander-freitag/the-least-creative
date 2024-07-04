@@ -22,7 +22,7 @@ response = newsapi.get_everything(q='*',
                                   to='2024-06-28',
                                   language=LANGUAGE,
                                   sort_by='relevancy',
-                                  page=10)
+                                  page=3)
 if response['status'] == 'ok':
     articles = []
     for article in response['articles']:
