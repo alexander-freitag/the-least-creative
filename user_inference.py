@@ -1,7 +1,6 @@
 from os.path import join
 from translation import translate_german_to_english, translate_bulgarian_to_english
-from keyword_extractor import extract_keywords_ollama
-from scripts.handle_articles import format_all_articles
+from keyword_extractor import extract_keywords
 from scripts.handle_queries import save_query
 from language_detection import detect_language
 
@@ -15,17 +14,17 @@ def handle_user_query(query):
     detected_language = detect_language(query)
 
     # Translating the query to English if needed
-    if detected_language == "de":
+    if detected_language == "en":
+        translated_query = query
+    elif detected_language == "de":
         translated_query = translate_german_to_english(query)
     elif detected_language == "bg":
         translated_query = translate_bulgarian_to_english(query)
-    elif detected_language == "en":
-        translated_query = query
     else:
         raise ValueError("Language not supported or recognized")
 
     # Extracting keywords from the translated query
-    detected_keywords = extract_keywords_ollama(translated_query)
+    detected_keywords = extract_keywords(translated_query)
     
     # Ranking the articles based on the keywords
     # TODO rank_articles = rank_articles(detected_keywords)
@@ -47,8 +46,8 @@ def handle_user_query(query):
  
     return result
 
-# test_query = """
-# What are the benefits of LLMs in programming?
-# """
-# handle_user_query(test_query)
+test_query = """
+Welche sind die teuersten Städte in Europa?
+"""
+handle_user_query(test_query)
 
