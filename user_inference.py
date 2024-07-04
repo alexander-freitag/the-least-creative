@@ -9,6 +9,32 @@ from handle_queries import save_query
 from handle_articles import format_all_articles
 
 
+def rank_articles(generated_queries):
+    system_prompt = """
+        Rank the following articles based on their relevance to the user query.
+        Use only the articles that are most relevant to the user query.
+        If there are a lot of relevant articles, you can use the 10 articles.
+        Return only the IDs of the articles in descending order of relevance.
+        Order the ids in a comma-separated list.
+        Do not include any additional information."""
+
+    article_string = format_all_articles()
+    user_prompt = "User Query: " + ", ".join(generated_queries) + "\n\n" + "Articles: " + "\n".join(article_string)
+
+    ranking_data = {
+        "model": "llama3",
+        "raw": False,
+        "prompt": f"{user_prompt}",
+        "system": f"{system_prompt}",
+        "stream": False,
+    }
+
+    ranking_response = r.post("http://localhost:11434/api/generate", json=ranking_data)
+    ranking_response = ranking_response.json()
+    ranking_response = ranking_response["response"]
+
+    return ranking_response
+
 def handle_user_query(query):    
     # Detecting the language of the query
     detected_language = detect_language(query)
@@ -27,13 +53,14 @@ def handle_user_query(query):
     detected_keywords = extract_keywords(translated_query)
     
     # Ranking the articles based on the keywords
-    rank_articles = rank_articles(detected_keywords)
-    rank_articles = []
+    ranked = rank_articles(detected_keywords)
+
 
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
 
     # Save the JSON data to the file
-    id = save_query(query, timestamp, detected_keywords, detected_language, rank_articles)
+    # TODO Add ranked 
+    id = save_query(query, timestamp, detected_keywords, detected_language, [])
     
     result = {
         'id': id,
@@ -41,34 +68,7 @@ def handle_user_query(query):
         'timestamp': timestamp,
         'detected_keywords': detected_keywords,
         'detected_language': detected_language,
-        'rank_articles': rank_articles
+        'rank_articles': ranked
     }
  
     return result
-
-
-def rank_articles(generated_queries):
-    system_prompt = """
-        Rank the following articles based on their relevance to the user query.
-        Use only the articles that are most relevant to the user query.
-        If there are a lot of relevant articles, you can use the 10 articles.
-        Return only the IDs of the articles in descending order of relevance.
-        Order the ids in a comma-separated list.
-        Do not include any additional information."""
-
-    article_string = format_all_articles()
-    user_prompt = "User Query: " + generated_queries + "\n\n" + "Articles: " + "\n".join(article_string)
-
-    ranking_data = {
-        "model": "llama3",
-        "raw": False,
-        "prompt": f"{user_prompt}",
-        "system": f"{system_prompt}",
-        "stream": False,
-    }
-
-    ranking_response = r.post("http://localhost:11434/api/generate", json=ranking_data)
-    ranking_response = ranking_response.json()
-    ranking_response = ranking_response["response"]
-
-    return ranking_response

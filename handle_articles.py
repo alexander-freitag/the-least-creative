@@ -4,6 +4,7 @@ import os
 from keyword_extractor import extract_keywords
 from translation import translate_bulgarian_to_english, translate_german_to_english
 
+
 # Define the directories
 en_dir = 'data/articles/en/'
 de_dir = 'data/articles/de/'
@@ -96,8 +97,6 @@ def save_article(title, timestamp, content, language):
     with open(file_path, 'w') as file:
         json.dump(data, file)
 
-    print("Article saved at:", file_path)
-
     return new_id
 
 
@@ -177,7 +176,7 @@ def add_keywords(file_id, keywords):
 def read_files_from_directory(directory):
     # Check if the directory exists
     if not os.path.exists(directory):
-        raise FileNotFoundError(f"Directory '{directory}' does not exist.")
+        os.makedirs(directory)
 
     # Get all the file names from the directory
     files = [f for f in os.listdir(directory) if f.endswith('.json')]
@@ -187,7 +186,7 @@ def read_files_from_directory(directory):
     for file_name in files:
         file_path = os.path.join(directory, file_name)
         with open(file_path, 'r') as file:
-            content = file.read()
+            content = json.load(file)
             file_contents.append(content)
 
     return file_contents
@@ -197,7 +196,7 @@ def extract_ids_and_keywords(list_of_articles):
     extracted_data = []
     for article in list_of_articles:
         article_data = {
-            'id': article['id'],
+            'id': int(article['id']),
             'keywords': article['keywords']
         }
         extracted_data.append(article_data)
@@ -230,3 +229,6 @@ def format_all_articles():
     formatted_articles = format_articles(extracted_data)
 
     return formatted_articles
+
+
+print(extract_ids_and_keywords(read_files_from_directory(en_dir)))
