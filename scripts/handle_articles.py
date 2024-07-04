@@ -37,7 +37,7 @@ def get_last_article():
         return 0
 
 
-def save_articles(title, timestamp, content, keywords, language):
+def save_article(title, timestamp, content, keywords, language):
     # Test if title is of type string
     if not isinstance(title, str):
         raise TypeError("Title must be a string.")
@@ -79,6 +79,7 @@ def save_articles(title, timestamp, content, keywords, language):
     
     # Create the JSON data
     data = {
+        'id': new_id,
         'title': title,
         'timestamp': timestamp,
         'content': content,
@@ -146,80 +147,23 @@ def get_keywords(file_id):
     return article_data['keywords']
 
 
-# def add_keywords(file_id, language, keywords):
-#     # Get the article data
-#     article_data = open_article(file_id, language)
+def add_keywords(file_id, keywords):
+    # Get the article data
+    article_data = get_article(file_id)
     
-#     # Check if the keywords are of type list
-#     if not isinstance(keywords, list):
-#         raise TypeError("Keywords must be a list.")
+    # Check if the keywords are of type list
+    if not isinstance(keywords, list):
+        raise TypeError("Keywords must be a list.")
     
-#     # Add the keywords to the article data
-#     article_data['keywords'].extend(keywords)
-    
-#     # Create the file path
-#     file_path = f'data/articles/{language}/{file_id}-{language}.json'
-    
-#     # Save the updated article data to the file
-#     with open(file_path, 'w') as file:
-#         json.dump(article_data, file)
+    # Add the keywords to the article data
+    article_data['keywords'].extend(keywords)
+
+    # Create the file path
+    file_path = f'{article_data['language']}{file_id}.json'
+
+    # Save the updated article data to the file
+    with open(file_path, 'w') as file:
+        json.dump(article_data, file)
         
-#     return article_data['keywords']
-
-
-# def get_articles_preformat(language):
-#     # Get the list of article files in the specified language directory
-#     directory = f'data/articles/{language}/'
-#     files = [f for f in os.listdir(directory) if f.endswith('.json')]
-    
-#     # Initialize an empty list to store the article data
-#     articles = []
-    
-#     # Iterate over each file
-#     for file in files:
-#         # Extract the file id from the filename
-#         file_id = int(file.split('-')[0])
-        
-#         # Create the file path
-#         file_path = os.path.join(directory, file)
-        
-#         # Read the JSON data from the file
-#         with open(file_path, 'r') as f:
-#             data = json.load(f)
-        
-#         # Extract the keywords from the article data
-#         keywords = data['keywords']
-        
-#         # Append the article id, keywords, and language to the list
-#         articles.append({'id': file_id, 'language': language, 'keywords': keywords, })
-    
-#     return articles
-
-
-# def get_all_articles():
-#     # Initialize an empty list to store all articles
-#     all_articles = []
-    
-#     # List of languages
-#     languages = ['en', 'bg', 'de']
-    
-#     # Iterate over each language
-#     for language in languages:
-#         # Get articles with id and keywords for the language
-#         articles = get_articles_preformat(language)
-        
-#         # Extend the all_articles list with articles for the language
-#         all_articles.extend(articles)
-    
-#     return all_articles
-
-
-# def format_articles(article):
-#     return f"ID: {article['id']}; Language: {article['language']}; Keywords: {', '.join(article['keywords'])}"
-
-
-# def format_all_articles():
-#     all_articles = get_all_articles()
-#     formatted_articles = [format_articles(article) for article in all_articles]
-#     return '\n'.join(formatted_articles)
+    return article_data['keywords']
 
