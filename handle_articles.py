@@ -8,7 +8,7 @@ from translation import translate_bulgarian_to_english, translate_german_to_engl
 en_dir = 'data/articles/en/'
 de_dir = 'data/articles/de/'
 bg_dir = 'data/articles/bg/'
-de_dir_raw = 'data/articles/raw/de/'
+
 
 def get_last_article():
     # Check if the directories exist and create them if not
@@ -99,48 +99,6 @@ def save_article(title, timestamp, content, language):
     print("Article saved at:", file_path)
 
     return new_id
-
-
-def get_last_raw_article():
-    # Check if the directories exist and create them if not
-    if not os.path.exists(de_dir_raw):
-        os.makedirs(de_dir_raw)
-
-    # Get all the file names from the directories that are json
-    de_files = [f for f in os.listdir(de_dir_raw) if f.endswith('.json')]
-
-    # Combine all three lists into one array
-
-    # Sort files based on the numeric part of the filename
-    de_files.sort(key=lambda x: int(x.split('.')[0]))
-
-    # Return the last query id in the sorted list
-    if de_files:
-        # Get ids from the filenames
-        id = int(de_files[-1].split('.')[0])
-        return id
-    else:
-        return 0
-
-
-
-def save_raw_article(title, timestamp, content, language):
-    data = {
-        'title': title,
-        'timestamp': timestamp,
-        'content': content,
-        'language': language
-    }
-    last_id = get_last_raw_article()
-
-    # Increment the id
-    new_id = last_id + 1
-
-    file_path = f'{de_dir_raw}{new_id}.json'
-    with open(file_path, 'w') as file:
-        json.dump(data, file)
-
-    print("Article saved at:", file_path)
 
 
 def get_article(file_id):

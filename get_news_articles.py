@@ -39,7 +39,6 @@ if response['status'] == 'ok':
             if len(full_content) < 50 or len(full_content) > 10000:
                 continue
             save_article(title, published_at, full_content, LANGUAGE)
-            #save_raw_article(title, published_at, full_content, LANGUAGE)
         except Exception as e:
             print(f"Fehler beim Laden des Artikels von {url}: {e}")
 
