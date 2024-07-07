@@ -5,7 +5,7 @@ from newsapi import NewsApiClient
 import requests
 
 from keyword_extractor import extract_keywords_ollama
-from scripts.handle_articles import save_article, save_raw_article
+from handle_articles import save_article
 
 NEWS_API_KEY = "906dfbcb405b487d8e61393e5fe929de"
 LANGUAGE = 'de'
@@ -18,11 +18,11 @@ newsapi = NewsApiClient(api_key=NEWS_API_KEY)
 
 #TODO: adapt query
 response = newsapi.get_everything(q='*',
-                                  from_param='2024-06-10',
-                                  to='2024-06-28',
+                                  from_param='2024-06-28',
+                                  to='2024-07-02',
                                   language=LANGUAGE,
                                   sort_by='relevancy',
-                                  page=3)
+                                  page=5)
 if response['status'] == 'ok':
     articles = []
     for article in response['articles']:
