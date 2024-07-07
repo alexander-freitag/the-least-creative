@@ -86,22 +86,3 @@ def get_query(query_id):
         data = json.load(file)
     
     return data
-
-
-# # Example usage of get_last_query
-# last_query_id = get_last_query()
-# print(f"The last query id is: {last_query_id}")
-
-# # Example usage of save_query
-# query = "How to use Python?"
-# timestamp = "2022-01-01 12:00:00"
-# detected_keywords = ["Python", "programming"]
-# detected_language = "en"
-# rank_articles = ["article1", "article2", "article3"]
-# new_query_id = save_query(query, timestamp, detected_keywords, detected_language, rank_articles)
-# print(f"The new query id is: {new_query_id}")
-
-# # Example usage of open_query
-# query_id = 1
-# query_data = get_query(query_id)
-# print(f"The data for query id {query_id} is: {query_data}")
