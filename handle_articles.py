@@ -93,9 +93,9 @@ def save_article(title, timestamp, content, language):
         'translation': translation
     }
 
-    # Save the JSON data to the file
-    with open(file_path, 'w') as file:
-        json.dump(data, file)
+    # Save the JSON data to the file with utf-8 encoding
+    with open(file_path, 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False)
 
     return new_id
 
@@ -229,6 +229,3 @@ def format_all_articles():
     formatted_articles = format_articles(extracted_data)
 
     return formatted_articles
-
-
-print(extract_ids_and_keywords(read_files_from_directory(en_dir)))

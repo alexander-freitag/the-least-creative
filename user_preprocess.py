@@ -1,62 +1,64 @@
-# This file will be called once the setup is complete. 
-# It should perform all the preprocessing steps that are necessary to run the project. 
-# All important arguments will be passed via the command line.
-# The input files will adhere to the format specified in datastructure/input-file.json
+# Description: This script is used to preprocess the input data.
+# It extracts the title, content, and timestamp from the input file.
+# It detects the language of the content and translates it to English if needed.
+# It also extracts keywords from the translated content.
+# The output is saved in a JSON file in the output directory.
 
 import json
-from os.path import join, split as split_path
-import requests as r
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, pipeline
-from translation import translate_german_to_english, translate_bulgarian_to_english
+from os.path import join, split
+from translation import translate_german_to_english, translate_bulgarian_to_english, detect_language
+from keyword_extractor import extract_keywords
 
+# This function is used to handle the input file
 def handle_input_file(file_location, output_path):
-    with open(file_location, 'r', encoding='utf-8') as f:
+    with open(file_location, encoding='utf-8') as f:
         data = json.load(f)
 
-    # Detect the language and translate the content to English if necessary
-    content = "\n".join(data["content"])
-    language = data.get("language", "en")
+    # Extracting the title, content, and timestamp from the input file
+    title = data["title"]
+    content = data["content"]
+    timestamp = data["timestamp"]
 
-    if language == "de":
-        content = translate_german_to_english(content)
-    elif language == "bg":
-        content = translate_bulgarian_to_english(content)
+    # Detecting the language of the content
+    detected_language = detect_language(content)
+    
+    # Translating the content to English if needed
+    if detected_language == "de":
+        translation = translate_german_to_english(content)
+    elif detected_language == "bg":
+        translation = translate_bulgarian_to_english(content)
+    elif detected_language == "en":
+        translation = content
+    else:
+        raise ValueError("Language not supported or recognized")
 
-    # Call to local ollama
-    call_data = {
-        "model": "llama3",
-        "prompt": content,
-        "system": "You are a helpful assistant working at the EU. It is your job to give users unbiased article recommendations. To do so, you always provide a list of tags, whenever you are prompted with an article. The tags should represent the core ideas of the article, and always be unbiased and in English. Response with the tags only, separated by commas.",
-        "stream": False
+    # Extracting keywords from the translated content
+    keywords = extract_keywords(translation)
+
+    result = {
+        "title": title,
+        "timestamp": timestamp,
+        "content": content,
+        "keywords": keywords,
+        "language": detected_language,
+        "translation": translation
     }
-    response = r.post("http://localhost:11434/api/generate", json=call_data)
-    response = response.json()
-    response_text = response["response"]
-    response_text = response_text.replace("Tags:", "")
-    tags = response_text.split(",")
-    tags = list(map(lambda x: x.strip().lower(), tags))
+    
+    file_name = split(file_location)[-1]
+    with open(join(output_path, file_name), "w", encoding='utf-8') as file:
+        json.dump(result, file, ensure_ascii=False)
+    
 
-    file_name = split_path(file_location)[-1]
-    with open(join(output_path, file_name), "w") as f:
-        json.dump({
-            "transformed_representation": tags
-        }, f)
-
-
-# This is a useful argparse-setup, you probably want to use in your project:
+# The code below is used to parse the command line arguments
 import argparse
-
 parser = argparse.ArgumentParser(description='Preprocess the data.')
 parser.add_argument('--input', type=str, help='Path to the input data.', required=True, action="append")
 parser.add_argument('--output', type=str, help='Path to the output directory.', required=True)
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    files_inp = args.input
+    files_inputs = args.input
     files_out = args.output
-
-    for file_location in files_inp:
+    
+    for file_location in files_inputs:
         handle_input_file(file_location, files_out)
-
-
- 

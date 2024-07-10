@@ -1,5 +1,9 @@
+# Description: This file contains the functions to translate German and Bulgarian text to English using the Helsinki-NLP models.
+# It also includes a function to detect the language of the input text.
+
 import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, pipeline
+from langdetect import DetectorFactory, LangDetectException, detect
 
 # Load the fine-tuned model and tokenizer
 model_de = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-de-en")
@@ -14,7 +18,7 @@ translation_pipeline_bg_en = pipeline("translation_bg_to_en", model=model_bg, to
 
 
 def split_text_by_periods(text, num_periods=5):
-    # Sätze anhand von Punkt aufteilen
+    # Split the text into chunks based on the number of periods
     sentences = text.split('. ')
     chunks = []
 
@@ -39,5 +43,25 @@ def translate_german_to_english(german_text):
 def translate_bulgarian_to_english(bulgarian_text):
     translated_text = []
     for sentence in split_text_by_periods(bulgarian_text):
-        translated_text.append(translation_pipeline_de_en(sentence))
+        translated_text.append(translation_pipeline_bg_en(sentence))
     return "".join(e[0]['translation_text'] for e in translated_text)
+
+
+# Ensure consistent results for language detection
+DetectorFactory.seed = 0
+
+def detect_language(text):
+    text = split_text_by_periods(text)[0]
+
+    try:
+        # Detect the language of the input text
+        detected_lang = detect(text)
+        lang_map = {
+            'de': 'de',
+            'en': 'en',
+            'bg': 'bg'
+        }
+        # Return either "Bulgarian", "German", "English" or "Unknown" if it isn't one of the three languages.
+        return lang_map.get(detected_lang, 'Unknown')
+    except LangDetectException:
+        return 'Unknown'

@@ -1,4 +1,6 @@
-import requests as r
+# Description: This file contains the code to extract keywords from a given text using the Ollama API with the Llama3 model.
+
+import requests
 
 # Extracting keywords using Ollama with the Llama3 model
 def extract_keywords_ollama(text):
@@ -18,7 +20,7 @@ def extract_keywords_ollama(text):
             Do not show the user query or the enhanced user query.""",
         "stream": False
     }
-    keywords_response = r.post("http://localhost:11434/api/generate", json=keywords_data)
+    keywords_response = requests.post("http://localhost:11434/api/generate", json=keywords_data)
     keywords_response = keywords_response.json()
     keywords_response = keywords_response["response"]
 
@@ -30,25 +32,3 @@ def extract_keywords_ollama(text):
 
 def extract_keywords(text):
     return extract_keywords_ollama(text)
-
-# import torch
-# from transformers import pipeline, AutoModelForTokenClassification, AutoTokenizer
-
-# # Load the fine-tuned model
-# model_path = 'training/results'
-# model = AutoModelForTokenClassification.from_pretrained(model_path)
-# tokenizer = AutoTokenizer.from_pretrained(model_path)
-
-# # Create a pipeline for token classification
-# keyword_extractor = pipeline(
-#     task="token-classification",
-#     model=model,
-#     tokenizer=tokenizer,
-#     device=0 if torch.cuda.is_available() else -1,  # Use GPU if available
-# )
-
-# def extract_keywords_trained(text):
-#     # Extract keywords from the text
-#     keywords = keyword_extractor(text)
-#     return [keyword['word'] for keyword in keywords]
-
