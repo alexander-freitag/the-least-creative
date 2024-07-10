@@ -23,18 +23,18 @@ def handle_input_file(file_location, output_path):
     # Detecting the language of the content
     detected_language = detect_language(content)
     
-    # Translating the content to English if needed
+    # Translating the content to English if needed and extracting keywords
     if detected_language == "de":
         translation = translate_german_to_english(content)
+        keywords = extract_keywords(translation)
     elif detected_language == "bg":
         translation = translate_bulgarian_to_english(content)
+        keywords = extract_keywords(translation)
     elif detected_language == "en":
-        translation = content
+        translation = ""
+        keywords = extract_keywords(content)
     else:
         raise ValueError("Language not supported or recognized")
-
-    # Extracting keywords from the translated content
-    keywords = extract_keywords(translation)
 
     result = {
         "title": title,

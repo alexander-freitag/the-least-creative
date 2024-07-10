@@ -1,3 +1,6 @@
+# Description: This script is used to handle the user queries and generate the output file with the results.
+# It takes the user query, detects the language, translates it to English if needed, extracts keywords, ranks the articles based on the keywords, and saves the results to a JSON file.
+
 import requests
 import time
 import argparse
@@ -5,7 +8,6 @@ import json
 
 from translation import translate_german_to_english, translate_bulgarian_to_english, detect_language
 from keyword_extractor import extract_keywords
-from handle_queries import save_query
 from handle_articles import format_all_articles
 
 

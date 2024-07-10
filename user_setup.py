@@ -1,10 +1,9 @@
-# This file is used to setup the project. It is executed when the project is imported.
-# This file should be used to download all large files (e.g., model weights) and store them to disk.
-# In this file, you can also check if the environment works as expected.
-# If something goes wrong, you can exit the script with a non-zero exit code.
-# This will help you detect issues early on.
-#
-# Below, you can find some sample code:
+# Description: This file is used to setup the project.
+# It is executed when the project is imported and should only be run once.
+# It should be used to download all large files (e.g., model weights) and store them to disk.
+# It checks if the environment works as expected.
+# If something goes wrong, the script exits with a non-zero exit code.
+# This helps detect issues early on.
 
 def download_large_files():
     return True
