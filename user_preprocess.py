@@ -5,6 +5,7 @@
 # The output is saved in a JSON file in the output directory.
 
 import json
+import os
 from os.path import join, split
 from translation import translate_german_to_english, translate_bulgarian_to_english, detect_language
 from keyword_extractor import extract_keywords
@@ -44,9 +45,16 @@ def handle_input_file(file_location, output_path):
         "translation": translation
     }
     
+
+    # Check if output path exists and create it if not
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+
     file_name = split(file_location)[-1]
     with open(join(output_path, file_name), "w", encoding='utf-8') as file:
         json.dump(result, file, ensure_ascii=False)
+
+    # python user_preprocess.py --input article_test.json --output results
     
 
 # The code below is used to parse the command line arguments
