@@ -9,9 +9,10 @@ import os
 from os.path import join, split
 from translation import translate_german_to_english, translate_bulgarian_to_english, detect_language
 from keyword_extractor import extract_keywords
+from handle_articles import save_article
 
 # This function is used to handle the input file
-def handle_input_file(file_location, output_path):
+def handle_input_file(file_location):
     with open(file_location, encoding='utf-8') as f:
         data = json.load(f)
 
@@ -22,46 +23,15 @@ def handle_input_file(file_location, output_path):
 
     # Detecting the language of the content
     detected_language = detect_language(content)
-    
-    # Translating the content to English if needed and extracting keywords
-    if detected_language == "de":
-        translation = translate_german_to_english(content)
-        keywords = extract_keywords(translation)
-    elif detected_language == "bg":
-        translation = translate_bulgarian_to_english(content)
-        keywords = extract_keywords(translation)
-    elif detected_language == "en":
-        translation = ""
-        keywords = extract_keywords(content)
-    else:
-        raise ValueError("Language not supported or recognized")
 
-    result = {
-        "title": title,
-        "timestamp": timestamp,
-        "content": content,
-        "keywords": keywords,
-        "language": detected_language,
-        "translation": translation
-    }
-    
-
-    # Check if output path exists and create it if not
-    if not os.path.exists(output_path):
-        os.makedirs(output_path)
-
-    file_name = split(file_location)[-1]
-    with open(join(output_path, file_name), "w", encoding='utf-8') as file:
-        json.dump(result, file, ensure_ascii=False)
-
-    # python user_preprocess.py --input article_test.json --output results
-    
+    # Saving the output in a JSON file in the output directory
+    save_article(title, timestamp, content, detected_language)
+  
 
 # The code below is used to parse the command line arguments
 import argparse
 parser = argparse.ArgumentParser(description='Preprocess the data.')
 parser.add_argument('--input', type=str, help='Path to the input data.', required=True, action="append")
-parser.add_argument('--output', type=str, help='Path to the output directory.', required=True)
 
 if __name__ == "__main__":
     args = parser.parse_args()
@@ -69,4 +39,4 @@ if __name__ == "__main__":
     files_out = args.output
     
     for file_location in files_inputs:
-        handle_input_file(file_location, files_out)
+        handle_input_file(file_location)
