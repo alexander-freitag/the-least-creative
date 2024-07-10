@@ -77,9 +77,7 @@ def crawler_nova(num_pages):
         # Iterate over the links and extract the data from each article
         for link in links:
             url = link.get("href")
-            article_data = article_nova(url)
-            if article_data:
-                articles_list.append(article_data)
+            save_nova(url)
         
         # Print the progress
         print("Page", page_counter, "done")
