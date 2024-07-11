@@ -229,3 +229,13 @@ def format_all_articles():
     formatted_articles = format_articles(extracted_data)
 
     return formatted_articles
+
+
+def get_all_articles():
+    en_files = read_files_from_directory(en_dir)
+    de_files = read_files_from_directory(de_dir)
+    bg_files = read_files_from_directory(bg_dir)
+
+    # Combine all three lists into one array
+    all_files = en_files + de_files + bg_files
+    return all_files
