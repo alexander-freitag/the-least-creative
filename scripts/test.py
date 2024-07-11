@@ -1,8 +1,37 @@
+import json
 import math
+import os
 from collections import defaultdict, Counter
 
 from handle_articles import get_all_articles
+en_dir = 'data/articles/en/'
+de_dir = 'data/articles/de/'
+bg_dir = 'data/articles/bg/'
+def read_files_from_directory(directory):
+    # Check if the directory exists
+    if not os.path.exists(directory):
+        os.makedirs(directory)
 
+    # Get all the file names from the directory
+    files = [f for f in os.listdir(directory) if f.endswith('.json')]
+
+    # Read the contents of each file
+    file_contents = []
+    for file_name in files:
+        file_path = os.path.join(directory, file_name)
+        with open(file_path, 'r') as file:
+            content = json.load(file)
+            file_contents.append(content)
+
+    return file_contents
+def get_all_articles():
+    en_files = read_files_from_directory(en_dir)
+    de_files = read_files_from_directory(de_dir)
+    bg_files = read_files_from_directory(bg_dir)
+
+    # Combine all three lists into one array
+    all_files = en_files + de_files + bg_files
+    return de_files
 # Sample articles data
 articles = get_all_articles()
 
