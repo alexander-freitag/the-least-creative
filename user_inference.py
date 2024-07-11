@@ -18,7 +18,22 @@ def rank_articles(generated_queries):
         If there are a lot of relevant articles, you can use the 10 articles.
         Return only the IDs of the articles in descending order of relevance.
         Order the ids in a comma-separated list.
-        Do not include any additional information."""
+        Do not include any additional information.
+        Your output should look like this: \n
+        The results for the query:
+        1. Article 1 ... Relevance Score (?/100)
+        2. Article 2 ... Relevance Score (?/100)
+        3. Article 3 ... Relevance Score (?/100)
+        4. Article 4 ... Relevance Score (?/100)
+        5. Article 5 ... Relevance Score (?/100)
+        6. Article 6 ... Relevance Score (?/100)
+        7. Article 7 ... Relevance Score (?/100)
+        8. Article 8 ... Relevance Score (?/100)
+        9. Article 9 ... Relevance Score (?/100)
+        10. Article 10 ... Relevance Score (?/100)
+        """
+
+
 
     article_string = format_all_articles()
     user_prompt = "User Query: " + ", ".join(generated_queries) + "\n\n" + "Articles: " + "\n".join(article_string)
