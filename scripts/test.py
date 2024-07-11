@@ -3,7 +3,6 @@ import math
 import os
 from collections import defaultdict, Counter
 
-from handle_articles import get_all_articles
 en_dir = 'data/articles/en/'
 de_dir = 'data/articles/de/'
 bg_dir = 'data/articles/bg/'
