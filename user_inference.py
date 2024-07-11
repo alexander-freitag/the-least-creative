@@ -1,56 +1,90 @@
 # Description: This script is used to handle the user queries and generate the output file with the results.
 # It takes the user query, detects the language, translates it to English if needed, extracts keywords, ranks the articles based on the keywords, and saves the results to a JSON file.
 
-import requests
+import math
+from collections import defaultdict, Counter
 import time
 import argparse
 import json
 
+from handle_articles import get_all_articles
 from translation import translate_german_to_english, translate_bulgarian_to_english, detect_language
 from keyword_extractor import extract_keywords
-from handle_articles import format_all_articles
-
 
 def rank_articles(generated_queries):
-    system_prompt = """
-        Rank the following articles based on their relevance to the user query.
-        Use only the articles that are most relevant to the user query.
-        If there are a lot of relevant articles, you can use the 10 articles.
-        Return only the IDs of the articles in descending order of relevance.
-        Order the ids in a comma-separated list.
-        Do not include any additional information.
-        Your output should look like this: \n
-        The results for the query:
-        1. Article 1 ... Relevance Score (?/100)
-        2. Article 2 ... Relevance Score (?/100)
-        3. Article 3 ... Relevance Score (?/100)
-        4. Article 4 ... Relevance Score (?/100)
-        5. Article 5 ... Relevance Score (?/100)
-        6. Article 6 ... Relevance Score (?/100)
-        7. Article 7 ... Relevance Score (?/100)
-        8. Article 8 ... Relevance Score (?/100)
-        9. Article 9 ... Relevance Score (?/100)
-        10. Article 10 ... Relevance Score (?/100)
-        """
+    articles = get_all_articles()
 
+    # Step 1: Inverted Index Creation
+    inverted_index = defaultdict(set)
+    for article in articles:
+        for keyword in article['keywords']:
+            inverted_index[keyword.lower()].add(article['id'])
 
+    # Step 2: Retrieve Matching Articles
+    def retrieve_articles(query_keywords):
+        matching_articles = set()
+        for keyword in query_keywords:
+            if keyword in inverted_index:
+                matching_articles.update(inverted_index[keyword])
+        return matching_articles
 
-    article_string = format_all_articles()
-    user_prompt = "User Query: " + ", ".join(generated_queries) + "\n\n" + "Articles: " + "\n".join(article_string)
+    # Replace with actual query keywords extraction
+    matching_article_ids = retrieve_articles(generated_queries)
+    matching_articles = [article for article in articles if article['id'] in matching_article_ids]
 
-    ranking_data = {
-        "model": "llama3",
-        "raw": False,
-        "prompt": f"{user_prompt}",
-        "system": f"{system_prompt}",
-        "stream": False,
-    }
+    # Step 3: TF-IDF Calculation
+    def compute_tf(article):
+        tf = Counter(article['keywords'])
+        total_terms = len(article['keywords'])
+        return {term: freq / total_terms for term, freq in tf.items()}
 
-    ranking_response = requests.post("http://localhost:11434/api/generate", json=ranking_data)
-    ranking_response = ranking_response.json()
-    ranking_response = ranking_response["response"]
+    def compute_idf(articles):
+        num_articles = len(articles)
+        idf = defaultdict(lambda: 0)
+        for article in articles:
+            unique_terms = set(article['keywords'])
+            for term in unique_terms:
+                idf[term] += 1
+        return {term: math.log(num_articles / (freq + 1)) for term, freq in idf.items()}
+
+    def compute_tf_idf(articles):
+        idf = compute_idf(articles)
+        tf_idf = {}
+        for article in articles:
+            tf = compute_tf(article)
+            tf_idf[article['id']] = {term: tf_val * idf[term] for term, tf_val in tf.items()}
+        return tf_idf
+
+    tf_idf_scores = compute_tf_idf(articles)
+
+    # Step 4: Rank Articles
+    def rank_articles(query_keywords, tf_idf_scores):
+        article_scores = defaultdict(lambda: 0)
+        for article_id, scores in tf_idf_scores.items():
+            for keyword in query_keywords:
+                if keyword in scores:
+                    article_scores[article_id] += scores[keyword]
+        ranked_articles = sorted(article_scores.items(), key=lambda item: item[1], reverse=True)
+        return ranked_articles
+
+    ranked_article_ids = rank_articles(generated_queries, tf_idf_scores)
+    ranked_articles = [article for article_id, score in ranked_article_ids for article in articles if
+                       article['id'] == article_id]
+
+    # Step 5: Display Top-N Articles
+    top_n = 10  # Number of top articles to display
+    top_articles = ranked_articles[:top_n]
+    ranking_response = ""
+    for article in top_articles:
+        ranking_response += f"1.\tTitle: {article['title']}\n\tContent: {article['content'][:200]}...\nKeywords: {article['keywords']}"
+        print(f"Title: {article['title']}")
+        print(f"Content: {article['content'][:200]}...")
+        print(f"Keywords: {article['keywords']}...")  # Display first 200 characters of the content
+        print("\n")
 
     return ranking_response
+
+
 
 def handle_user_query(query, query_id, output_path):    
     # Detecting the language of the query
