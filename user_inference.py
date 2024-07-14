@@ -95,7 +95,7 @@ def print_results(query_id, query, detected_language, translated_query, generate
     print("\nSuggested Articles:")
     for i, article in enumerate(suggested_queries, 1):
         print(f"{i}. Title: {article['title']}")
-        print(f"   Content: {article['content']}")
+        print(f"   Content: {article['content'][:200]}")
         print(f"   Keywords: {article['transformed_representation']}")
         print("")
     print("")
