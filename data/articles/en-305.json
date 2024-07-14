@@ -1,0 +1,17 @@
+{
+    "title": "Tim Cook is ‘not 100 percent’ sure Apple can stop AI hallucinations",
+    "timestamp": "2024-06-11T14:22:54Z",
+    "content": "By  Emma Roth, a news writer who covers the streaming wars, consumer tech, crypto, social media, and much more. Previously, she was a writer and editor at MUO. \nEven Apple CEO Tim Cook isn’t sure the company can fully stop AI hallucinations. In an interview with The Washington Post, Cook said he would “never claim” that its new Apple Intelligence system won’t generate false or misleading information with 100 percent confidence.\n“I think we have done everything that we know to do, including thinking very deeply about the readiness of the technology in the areas that we’re using it in,” Cook says. “So I am confident it will be very high quality. But I’d say in all honesty that’s short of 100 percent. I would never claim that it’s 100 percent.”\nApple revealed its new Apple Intelligence system during its Worldwide Developers Conference on Monday, which will bring AI features to the iPhone, iPad, and Mac. These features will let you generate email responses, create custom emoji, summarize text, and more. \nAs is the case with all other AI systems, this also introduces the possibility of hallucinations. Recent examples of how AI can get things wrong include last month’s incident with Google’s Gemini-powered AI overviews telling us to use glue to put cheese on pizza or a recent ChatGPT bug that caused it to spit out nonsensical answers.\nApple also announced that it’s partnering with OpenAI to build ChatGPT into Siri. The voice assistant will turn to ChatGPT when it receives a question better suited for the chatbot, but it will ask for your permission before doing so. In the demo of the feature shown during WWDC, you can see a disclaimer at the bottom of the answer that reads, “Check important info for mistakes.” \nWhen asked about the integration, Cook said Apple chose OpenAI because the company is a “pioneer” in privacy, and it currently has “the best model.” Apple might not just partner with OpenAI down the road, either. Cook responded, “We’re integrating with other people as well.” During a post-keynote live session on Monday, Apple senior vice president Craig Federighi said Apple could eventually bring Google Gemini to iOS, too.\n / Sign up for Verge Deals to get deals on products we've tested sent to your inbox weekly.\nThe Verge is a vox media network\n© 2024 Vox Media, LLC. All Rights Reserved",
+    "translation": "",
+    "transformed_representation": [
+        "AI",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Apple",
+        "Siri",
+        "OpenAI",
+        "ChatGPT",
+        "Google Gemini"
+    ],
+    "detected_language": "en"
+}

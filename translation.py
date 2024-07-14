@@ -51,7 +51,7 @@ def translate_bulgarian_to_english(bulgarian_text):
 DetectorFactory.seed = 0
 
 def detect_language(text):
-    text = split_text_by_periods(text)[0]
+    # text = split_text_by_periods(text)[0]
 
     try:
         # Detect the language of the input text
@@ -61,7 +61,7 @@ def detect_language(text):
             'en': 'en',
             'bg': 'bg'
         }
-        # Return either "Bulgarian", "German", "English" or "Unknown" if it isn't one of the three languages.
-        return lang_map.get(detected_lang, 'Unknown')
+        # Return either "bg", "de", "en" or "unknown" if it isn't one of the three languages.
+        return lang_map.get(detected_lang, 'unknown')
     except LangDetectException:
-        return 'Unknown'
+        return 'unknown'

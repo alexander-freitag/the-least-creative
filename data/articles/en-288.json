@@ -1,0 +1,27 @@
+{
+    "title": "This is Big Tech’s playbook for swallowing the AI industry",
+    "timestamp": "2024-07-01T20:01:25Z",
+    "content": "By  Alex Heath, a deputy editor and author of the Command Line newsletter. He has over a decade of experience covering the tech industry.\nA couple of months ago, I was sitting in the audience at a tech conference in San Fransisco watching Bloomberg’s Emily Chang interview Reid Hoffman. \nShe asked about Microsoft’s hiring of the team behind Inflection, a would-be OpenAI competitor that Hoffman co-founded. It was an acquisition in everything but name, clearly designed to avoid the scrutiny of antitrust regulators. Not only had Microsoft (where Hoffman is a board member) hired most of Inflection’s employees — it also licensed the startup’s technology in a way that seemed designed to make its investors whole. \nSpeaking with Chang that day onstage, Hoffman predicted that what happened to Inflection will become a “pattern” for future AI deals. We are seeing that pattern play out now.\nLast Friday, Amazon announced that it is hiring most of the team behind Adept, another would-be OpenAI competitor that raised about $400 million from top-tier investors to build, in the words of CEO David Luan, “a new type of giant model that turns natural language into actions on your machine.”\nAlexandra Miller, an Amazon spokesperson, told The Verge that the company had hired “close to” to 66 percent of Adept’s employees. In an internal memo published by GeekWire’s Taylor Soper, SVP Rohit Prasad said that, like Microsoft with Inflection, Amazon will also be licensing Adept’s technology to “accelerate our roadmap for building digital agents that can automate software workflows.”\nAdept’s corporate blog post about the news suggests it was running out of money: “Continuing with Adept’s initial plan of building both useful general intelligence and an enterprise agent product would’ve required spending significant attention on fundraising for our foundation models, rather than bringing to life our agent vision.” Recent reports say the company has been looking to sell itself.\nThe reality is that building leading AI models is extremely costly, and raising $400 million isn’t even enough to compete these days. Big Tech, meanwhile, is flush with cash and looking to get in on what everyone perceives to be the next big thing. It’s logical for more AI startups to go the way of Inflection and Adept as the industry consolidates.\nThe problem for Big Tech is that they are no longer allowed to buy companies like they once did. The current antitrust enforcement regime would most certainly try to block an Amazon acquisition of Adept, whether there is a strong legal argument for doing so or not. (Amazon execs are still seething about not being allowed to buy a robot vacuum cleaner company.)\n / A newsletter from Alex Heath about the tech industry’s inside conversation.\nEven still, capitalism finds a way. What Microsoft did to Inflection, and what Amazon just did to Adept, is the new Big Tech playbook for swallowing the AI industry and getting away with it. Silicon Valley has a storied history of acquihires, where a startup is gutted for its people and left for dead. Microsoft and Amazon have done what are essentially reverse acquihires, where the hiring of people and a corresponding licensing deal is designed to disguise what is actually an acquisition. \nReid Hoffman, meanwhile, should probably be congratulated for more than just an accurate prediction about the future of these deals — one of Adept’s earliest investors was none other than his venture capital firm, Greylock.\nCorrection, July 1st: A previous version of this story incorrectly stated the percentage of Adept employees hired by Amazon. The percentage is “close to” 66 percent, not 80 percent. \n / Sign up for Verge Deals to get deals on products we've tested sent to your inbox weekly.\nThe Verge is a vox media network\n© 2024 Vox Media, LLC. All Rights Reserved",
+    "translation": "",
+    "transformed_representation": [
+        "Tags: Microsoft",
+        "Amazon",
+        "OpenAI",
+        "AI",
+        "Antitrust",
+        "Acquisition",
+        "Tech industry",
+        "Startups",
+        "Venture capital",
+        "Greylock",
+        "Reid Hoffman",
+        "Inflection",
+        "Adept",
+        "Silicon Valley",
+        "Capitalism",
+        "Big Tech",
+        "Mergers and acquisitions",
+        "Business and finance"
+    ],
+    "detected_language": "en"
+}

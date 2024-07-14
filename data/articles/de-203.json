@@ -1,0 +1,29 @@
+{
+    "title": "heise+ | Kurztests: Tools für Datenstrukturierung, Codeerzeugung und Systeminformationen",
+    "timestamp": "2024-06-14T13:00:00Z",
+    "content": "\n\n\n        Die drei Tools Kaitai Struct, Zint und fastfetch helfen mit wenig Aufwand bei diversen Aufgaben wie Datenanalyse, Barcodeerzeugung und Informationsanzeige.\n      \nWir haben dieses Mal drei Tools unter die Lupe genommen, die beim Programmieren helfen, indem sie besondere Aufgaben übernehmen. Kaitai Struct hilft bei der Analyse von Binärdateien. Die deklarative Sprache beschreibt in simplem YAML das Format binärer Daten.\nWer gelegentlich verschiedene Codes wie Bar- oder QR-Codes erstellt, kann auf das Open-Source-Tool Zint zurückgreifen. Über die Oberfläche oder Kommandozeile lassen sich die gewünschten Informationen eingeben, welche das Tool lokal codiert. So verlassen keine Daten den eigenen PC.\nDas Linux-Kommandozeilentool fastfetch ist darauf ausgelegt, Systeminformationen schnell und schnörkellos anzuzeigen. Die Ausgabe erfolgt in der Konsole und ist anpassbar.\nMit openSUSE Leap 15.6 bekommt man eine sehr stabile Linux-Distribution. Die Admin-Weboberfläche Cockpit ist ein willkommener Neuzugang. \nBMW macht mit dem Basismodell des elektrischen X1 ein attraktives Angebot, sofern der Kunde auf die klassischen Markenwerte teilweise verzichten kann. ​\nMit dem WLED-System und einem ESP kann man LED-Streifen ganz leicht ansteuern. Eine zweidimensionale selbstgebaute Pixel-Lampe setzt die Effekte schön in Szene.\nNavi-Apps für Fahrradfahrer sollen kurze oder schöne Strecken mit wenig Autoverkehr finden. Wir haben sechs Apps gegen Apple und Google Maps antreten lassen.\nEine externe Tastatur verleiht dem Tablet das Schreibgefühl eines Computers und erhöht die Produktivität. Wir erklären, worauf es bei der Auswahl ankommt.\nWero soll Überweisungen zwischen Privatpersonen und an Händler vereinfachen und beschleunigen. Das Ziel: Paypal und andere Anbieter ersetzen.\n\n    Der Newsletter zur neuen Ausgabe: Tests, Praxis, Wissen und vieles mehr, jeden zweiten Donnerstag.\n  \n\n    Ausführliche Informationen zum Versandverfahren und zu Ihren\n    Widerrufsmöglichkeiten erhalten Sie in unserer\n    Datenschutzerklärung.\n  \n\nImmer informiert bleiben: Klicken Sie auf das Plus-Symbol an einem Thema, um diesem zu folgen. Wir zeigen Ihnen alle neuen Inhalte zu Ihren Themen.\n\n          Mehr erfahren.\n        \n\n\nExklusive Tests, Ratgeber & Hintergründe. Unbegrenzter Zugriff auf alle heise+ Beiträge inkl. allen Digital-Magazinen.",
+    "translation": "The three tools Kaitai Struct, Zint and fastfetch help with a lot of effort in various tasks such as data analysis, barcode generation and information display. This time, we have examined three tools that help with programming by doing special tasks. Kaitai Struct helps with the analysis of binary files. The declarative language describes the format of binary data in simple YAML. If you occasionally create different codes such as bar or QR codes, you can use the open source tool Zint. Via the interface or command line, you can enter the desired information that the tool coded locally. Thus, no data leaves your own PC. The Linux command line tool fastfetch is designed to display system information quickly and unobtrusively.The output takes place in the console and is customizable. With openSUSE Leap 15.6 you get a very stable Linux distribution. The admin web interface cockpit is a welcome new addition. BMW makes an attractive offer with the basic model of the electric X1, provided that the customer can partly dispense with the classic brand values. With the WLED system and an ESP you can easily control LED strips. A two-dimensional self-made pixel lamp sets the effects nicely in scene. Navi apps for cyclists should find short or nice distances with little car traffic. We have six apps against Apple and Google Maps. An external keyboard gives the tablet the writing feel of a computer and increases productivity.We explain what is important when selecting the product. Wero is designed to simplify and speed up transfers between private individuals and dealers. The aim is to replace Paypal and other providers. The newsletter for the new issue: tests, practice, knowledge and much more, every second Thursday. Detailed information about the shipping procedure and your revocation options is available in our privacy policy. Stay informed: Click on the plus icon on a topic to follow it. We will show you all new content on your topics. Learn more. Exclusive tests, guides & backgrounds. Unlimited access to all heise+ posts including all digital magazines.",
+    "transformed_representation": [
+        "Tools",
+        "programming",
+        "Kaitai Struct",
+        "Zint",
+        "fastfetch",
+        "binary files",
+        "barcode generation",
+        "information display",
+        "Linux",
+        "command line",
+        "openSUSE Leap",
+        "cockpit",
+        "ESP",
+        "LED strips",
+        "Navi apps",
+        "Apple Maps",
+        "Google Maps",
+        "external keyboard",
+        "Wero",
+        "PayPal"
+    ],
+    "detected_language": "de"
+}

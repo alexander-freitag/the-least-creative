@@ -1,0 +1,16 @@
+{
+    "title": "Meta tests Vision Pro-like freeform virtual screen placement for Quest headsets",
+    "timestamp": "2024-06-26T00:22:54Z",
+    "content": "By  Quentyn Kennemer, a writer who helps The Verge's readers save money by surfacing the best tech deals and presenting the latest product recommendations from our experts. He has covered tech and gaming for all of his 15-plus-year career for publications like Forbes, Business Insider, and more.\nIf you buy something from a Verge link, Vox Media may earn a commission. See our ethics statement.\nMeta is testing a feature for its Quest headsets that allows you to place windows freely, similar to the Apple Vision Pro. Multitasking with multiple windows has been part of Meta Horizon OS (formerly Meta Quest OS) for a few years now, but currently, it only supports three virtual windows docked in a side-by-side layout. \nRoadtoVR points out this demonstration video from a data miner named Luna, who spotted the experimental feature in version 67 of the Meta Quest Public Test Channel.\nIt brings the Quest 3, in particular, a step closer to Apple’s spatial computing when used in mixed reality mode, but from the video, it doesn’t seem to work quite the same way. You can freely move up to three windows from 2D apps — such as the browser or OS windows like your library and settings — around your space and keep another three docked. \nOther demos suggest that the windows will only remember their placement within a limited distance and return to their default positions should you switch orientation or reset the view. We haven’t tested it yet ourselves to know the full limitations here, but it looks promising. \nThe update also allows you to switch between curved and flat windows, as well as a dimmer that lowers the brightness of virtual environments while using 2D apps. (The latter doesn’t yet work for passthrough mode.)\nThe Apple Vision Pro allows you to move windows around whichever space you’re in and keep them locked in place even while you move around and after you take the headset off. That way, you can have a window sitting next to your refrigerator and another positioned alongside the TV in your living room, and then walk to and from the windows as if they’re actual objects. \nI’ve seen more ads lately that highlight the Quest 3’s productivity potential instead of just the gaming-centric ones. While Meta’s headset might not handle that with the same pizzazz as the Vision Pro just yet, considering it costs $3,000 less, it really doesn’t have to.\n / Sign up for Verge Deals to get deals on products we've tested sent to your inbox weekly.\nThe Verge is a vox media network\n© 2024 Vox Media, LLC. All Rights Reserved",
+    "translation": "",
+    "transformed_representation": [
+        "Meta Quest",
+        "Meta Horizon OS",
+        "Apple Vision Pro",
+        "mixed reality mode",
+        "spatial computing",
+        "virtual windows",
+        "productivity"
+    ],
+    "detected_language": "en"
+}

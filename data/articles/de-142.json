@@ -1,0 +1,27 @@
+{
+    "title": "Sicherheitsupdates: Fortinet rüstet Produkte gegen verschiedene Attacken",
+    "timestamp": "2024-06-13T13:55:00Z",
+    "content": "\n\n\n        Angreifer können Fortinet-Produkte unter anderem mit Schadcode attackieren, um Systeme zu kompromittieren. Patches stehen zum Download.\n      \n\n      \n        Schwachstellen bedrohen Appliances.\n      \n    \n\n      (Bild: Bild erstellt mit KI in Bing Designer durch heise online / dmk)\n    \nFür Netzwerkkomponenten von Fortinet sind sind wichtige Sicherheitsupdates erschienen. Davon sind FortiOS, FortiPAM, FortiProxy und FortiSwitchManager betroffen. Um Netzwerke zu schützen, sollten Admins die Patches zeitnah installieren.\nAm gefährlichsten ist eine Schwachstelle (CVE-2024-23110 „hoch“) in FortiOS eingestuft. Um die Lücke im Netzwerkbetriebssystem ausnutzen zu können, müssen Angreifer aber bereits authentifiziert sein. Aufgrund von Fehlern im Interpreter ist die Ausführung von Schadcode denkbar.\nDie verbleibenden Lücken sind mit dem Bedrohungsgrad „mittel“ und „niedrig“ versehen. An diesen Stellen können Angreifer etwa präparierte Pakete an den fgfmd-Daemon von FortiProxy schicken, um eigene Befehle auszuführen.\nDa eine Auflistung der verwundbaren und reparierten Version den Umfang dieser Meldung sprengen würde, sollten Admins die verlinkten Warnmeldungen prüfen:\n\n\n(des)\n\n\n\n    Ob Sicherheitslücken, Viren oder Trojaner – alle sicherheitsrelevanten Meldungen gibts bei heise Security\n  \n\n    Ausführliche Informationen zum Versandverfahren und zu Ihren\n    Widerrufsmöglichkeiten erhalten Sie in unserer\n    Datenschutzerklärung.\n  \n\nImmer informiert bleiben: Klicken Sie auf das Plus-Symbol an einem Thema, um diesem zu folgen. Wir zeigen Ihnen alle neuen Inhalte zu Ihren Themen.\n\n          Mehr erfahren.\n        \n\n\nExklusive Tests, Ratgeber & Hintergründe. Unbegrenzter Zugriff auf alle heise+ Beiträge inkl. allen Digital-Magazinen.",
+    "translation": "Fortinet products can be attacked with malware to compromise systems. Patches are available for download. Vulnerabilities threaten Appliances. (Image: Image created with AI in Bing Designer by heise online / dmk) Important security updates have been released for network components of Fortinet. This affects FortiOS, FortiPAM, FortiProxy and FortiSwitchManager. In order to protect networks, admins should install the patches in a timely manner. A vulnerability (CVE-2024-23110 \"too) in FortiOS is most dangerously classified. However, to exploit the vulnerability in the network operating system, attackers must be authenticated.Due to errors in the interpreter, the execution of malicious code is conceivable. The remaining gaps are \"medium- and \"low-level\". At these points, attackers can send prepared packages to the fgfmd daemon of FortiProxy to execute their own commands. As a listing of the vulnerable and repaired version would blow up the scope of this message, admins should check the linked alerts: (of) Whether security vulnerabilities, viruses or Trojans – all security-relevant messages are available at hot security Detailed information about the shipping procedure and your revocation options are available in our privacy policy. Keep informed: Click on the plus icon on a topic to follow it. We will show you all new content on your topics. Learn more. Exclusive tests, guides & backgrounds. Unlimited access to all heise+ posts including all digital magazines.",
+    "transformed_representation": [
+        "Fortinet",
+        "FortiOS",
+        "FortiPAM",
+        "FortiProxy",
+        "FortiSwitchManager",
+        "CVE-2024-23110",
+        "network components",
+        "patches",
+        "malware",
+        "vulnerability",
+        "authentication",
+        "interpreter errors",
+        "malicious code",
+        "fgfmd daemon",
+        "security updates",
+        "vulnerabilities",
+        "viruses",
+        "Trojans"
+    ],
+    "detected_language": "de"
+}

@@ -1,0 +1,23 @@
+{
+    "title": "Meta says European regulators are ruining its AI bot",
+    "timestamp": "2024-06-14T17:56:55Z",
+    "content": "By  Gaby Del Valle, a policy reporter. Her past work has focused on immigration politics, border surveillance technologies, and the rise of the New Right.\nMeta is putting plans for its AI assistant on hold in Europe after receiving objections from Ireland’s privacy regulator, the company announced on Friday. \nIn a blog post, Meta said the Irish Data Protection Commission (DPC) asked the company to delay training its large language models on content that had been publicly posted to Facebook and Instagram profiles.\nMeta said it is “disappointed” by the request, “particularly since we incorporated regulatory feedback and the European [Data Protection Authorities] have been informed since March.” Per the Irish Independent, Meta had recently begun notifying European users that it would collect their data and offered an opt-out option in an attempt to comply with European privacy laws.\nMeta said it will “continue to work collaboratively with the DPC.” But its blog post says that Google and OpenAI have “already used data from Europeans to train AI” and claims that if regulators don’t let it use users’ information to train its models, Meta can only deliver an inferior product. “Put simply, without including local information we’d only be able to offer people a second-rate experience. This means we aren’t able to launch Meta AI in Europe at the moment.”\nEuropean regulators, on the other hand, have welcomed the pause.\n“We are pleased that Meta has reflected on the concerns we shared from users of their service in the UK, and responded to our request to pause and review plans to use Facebook and Instagram user data to train generative AI,” Stephen Almond, the executive director of regulatory risk at the UK Information Commissioner’s Office, said in a statement. \nThe DPC’s request followed a campaign by the advocacy group NOYB — None of Your Business — which filed 11 complaints against Meta in several European countries, Reuters reports. NOYB founder Max Schrems told the Irish Independent that the complaint hinged on Meta’s legal basis for collecting personal data. “Meta is basically saying that it can use any data from any source for any purpose and make it available to anyone in the world, as long as it’s done via AI technology,” Schrems said. “This is clearly the opposite of GDPR compliance.”\n / Sign up for Verge Deals to get deals on products we've tested sent to your inbox weekly.\nThe Verge is a vox media network\n© 2024 Vox Media, LLC. All Rights Reserved",
+    "translation": "",
+    "transformed_representation": [
+        "AI",
+        "Meta AI",
+        "Data Protection Commission",
+        "privacy regulator",
+        "Ireland",
+        "European Union",
+        "GDPR compliance",
+        "data collection",
+        "artificial intelligence",
+        "OpenAI",
+        "Google",
+        "NOYB",
+        "None of Your Business",
+        "Max Schrems"
+    ],
+    "detected_language": "en"
+}

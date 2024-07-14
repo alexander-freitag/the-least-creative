@@ -5,14 +5,16 @@
 # The output is saved in a JSON file in the output directory.
 
 import json
+import argparse
 import os
-from os.path import join, split
-from translation import translate_german_to_english, translate_bulgarian_to_english, detect_language
-from keyword_extractor import extract_keywords
-from handle_articles import save_article
+
+from translation import detect_language
+from dataset import save_article, populate
+from user_config import ARTICLES_DIR
+
 
 # This function is used to handle the input file
-def handle_input_file(file_location):
+def handle_input_file(file_location, output_dir=ARTICLES_DIR):
     with open(file_location, encoding='utf-8') as f:
         data = json.load(f)
 
@@ -24,19 +26,45 @@ def handle_input_file(file_location):
     # Detecting the language of the content
     detected_language = detect_language(content)
 
+    # Building the output path
+    file_name = os.path.basename(file_location)
+
+    # Create output dir if it does not exist
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
+    output_path = os.path.join(output_dir, file_name + '.json')
+
     # Saving the output in a JSON file in the output directory
-    save_article(title, timestamp, content, detected_language)
+    save_article(title, timestamp, content, detected_language, output_path)
   
 
-# The code below is used to parse the command line arguments
-import argparse
+def create_dataset():
+    populate()
+
+
+# This is a useful argparse-setup, you probably want to use in your project:
 parser = argparse.ArgumentParser(description='Preprocess the data.')
-parser.add_argument('--input', type=str, help='Path to the input data.', required=True, action="append")
+parser.add_argument('--input', type=str, help='Path to the input data.', action="append")
+parser.add_argument('--output', type=str, help='Path to the output directory.', default=ARTICLES_DIR)
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    files_inputs = args.input
+    files_inp = args.input
     files_out = args.output
     
-    for file_location in files_inputs:
-        handle_input_file(file_location)
+    if files_inp is not None:
+        if files_out is None:
+            print("No output directory provided. Using default directory. These files will be added to the final dataset.")
+            files_out = ARTICLES_DIR
+        else:
+            if not os.path.exists(files_out):
+                os.makedirs(files_out)
+            print("Output directory provided. These files will NOT be added to the final dataset.")
+        for file_location in files_inp:
+            handle_input_file(file_location, files_out)
+    else:
+        print("No input files provided.")
+
+    create_dataset()
+    print("Final dataset created. Data preprocessing completed.")

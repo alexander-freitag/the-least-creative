@@ -1,5 +1,3 @@
 transformers
 langdetect
 sentencepiece
-bs4
-newsapi

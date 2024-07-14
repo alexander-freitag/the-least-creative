@@ -1,0 +1,15 @@
+{
+    "title": "Life360 confirms a hacker stole Tile tracker IDs and customer info",
+    "timestamp": "2024-06-12T16:13:30Z",
+    "content": "By  Umar Shakir, a news writer fond of the electric vehicle lifestyle and things that plug in via USB-C. He spent over 15 years in IT support before joining The Verge. \nIf you buy something from a Verge link, Vox Media may earn a commission. See our ethics statement.\nA hacker breached the systems behind Tile device trackers and stole customer data, including names, addresses, emails, and phone numbers. According to reporting from 404 Media, the hacker was able to collect customer information by accessing a tool made for responding to law enforcement requests about Tile trackers. The stolen information did not include precise Tile location data.\nLife360, which owns Tile, published a statement by CEO Chris Hulls acknowledging the hack. Hulls confirmed the data included Tile tracker IDs and said that the hacker had attempted to extort Life360 and that the company reported it to law enforcement.\nIn an email to The Verge, Hulls wrote, “From what I gather, very little was accessed.” Hulls did not respond to a question about whether the company would contact affected customers. “We are continuing to work with law enforcement on the matter and have no other updates at this time,” Life360 representative Kristi Collura told The Verge in another email. “What is seen in the excerpted screenshot from 404 Media is a single step for Life360 personnel to initiate a request to respond to a law enforcement request for Tile user data,” Collura wrote.\nThe hacker reportedly gained access using login credentials supposedly belonging to a former Tile employee. 404 Media was provided screenshots by the hacker indicating they had access to various internal tools designed to transfer ownership of a Tile tracker, add admin accounts, and send messages to Tile users.\nCorrection, June 12th: An earlier version of this article misstated the Life360 tool accessed. It is a tool that’s part of the process for responding to law enforcement requests, not a tool used by law enforcement directly.\n / Sign up for Verge Deals to get deals on products we've tested sent to your inbox weekly.\nThe Verge is a vox media network\n© 2024 Vox Media, LLC. All Rights Reserved",
+    "translation": "",
+    "transformed_representation": [
+        "Data Breach",
+        "Cybersecurity",
+        "Hacker",
+        "Tile",
+        "Life360",
+        "Customer Data"
+    ],
+    "detected_language": "en"
+}

@@ -1,0 +1,22 @@
+{
+    "title": "Adobe’s new terms of service say it won’t use your work to train AI",
+    "timestamp": "2024-06-18T17:57:43Z",
+    "content": "By  Emma Roth, a news writer who covers the streaming wars, consumer tech, crypto, social media, and much more. Previously, she was a writer and editor at MUO. \nIf you buy something from a Verge link, Vox Media may earn a commission. See our ethics statement.\nFor the past couple of weeks, Adobe has faced intense backlash over changes to its terms of service agreement — and now, it’s trying to patch things up. On Tuesday, Adobe announced a tweaked version of its terms of service agreement that makes it clear the company will not train AI on user content stored locally or in the cloud.\nThe section defining Adobe’s access to user content now includes several distinct categories, including one dedicated to generative AI. Adobe’s updated terms explicitly state that its software “will not use your Local or Cloud Content to train generative AI.” But there’s one exception: if your work is submitted to the Adobe Stock marketplace, the company can use it to train Adobe Firefly.\nThese additions to the terms of service, according to Scott Belsky, Adobe’s chief strategy officer, aren’t actually changing anything — Adobe says its stance on AI training just wasn’t clearly laid out before, leading to confusion. “We’ve explicitly said we will not train generative AI on your content,” Belsky said during an interview with The Verge. “It was always a policy that we had as a company. We always made that very clear, but we never explicitly said that.”\nThe new terms also address user concerns about Adobe scanning content created under a nondisclosure agreement (NDA), saying the company does not “scan or review” work stored locally on your device. Adobe will only automatically scan content uploaded to the cloud to “ensure we are not hosting illegal or abusive content, like Child Sexual Abuse Material.” It will also only subject work uploaded to the cloud to human review if it’s flagged or reported as illegal, or if you opt in to a prerelease, beta, or Adobe’s product improvement program.\nAdobe’s changes to its terms of service agreement sparked an uproar earlier this month after users misread changes as giving the company permission to use their work for AI training. The outcry stemmed from creatives who have grown frustrated with the company’s outsize grasp on the creative industry. Even the federal government has taken notice of users’ complaints about Adobe, as the Department of Justice is suing the company for allegedly hiding expensive cancellation fees and making it difficult to cancel their subscriptions.\nA lot of user frustration dates back to Adobe’s shift to a subscription-only model in 2012, something Belsky acknowledged as a point of contention. “I think that that was a change for some customers that probably rubbed them negatively,” Belsky said. “I think that when something like this [the terms of service update] happens, my observation is that we see a bit of a resurgence of that frustration. That may have been seeded back when we made that model change.”\nIt’s great that Adobe’s tweaking its terms of service to make them more transparent, but this may just serve as a small patch on top of a much larger wound that will likely take more time — and close attention — to heal.\n / Sign up for Verge Deals to get deals on products we've tested sent to your inbox weekly.\nThe Verge is a vox media network\n© 2024 Vox Media, LLC. All Rights Reserved",
+    "translation": "",
+    "transformed_representation": [
+        "AI Training",
+        "Adobe",
+        "Creative Industry",
+        "Department of Justice",
+        "Ethics Statement",
+        "Generative AI",
+        "Nondisclosure Agreement",
+        "Scott Belsky",
+        "Streaming Wars",
+        "Terms of Service Agreement",
+        "User Content",
+        "Verge Deals",
+        "Vox Media"
+    ],
+    "detected_language": "en"
+}

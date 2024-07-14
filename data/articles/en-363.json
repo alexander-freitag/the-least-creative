@@ -1,0 +1,28 @@
+{
+    "title": "Arkansas AG lawsuit claims the number one mobile shopping app is ‘dangerous malware’",
+    "timestamp": "2024-06-26T20:28:37Z",
+    "content": "By  Lauren Feiner, a senior policy reporter at The Verge, covering the intersection of Silicon Valley and Capitol Hill. She spent 5 years covering tech policy at CNBC, writing about antitrust, privacy, and content moderation reform.\nArkansas Attorney General Tim Griffin made sweeping claims against e-commerce app Temu in a lawsuit on Tuesday, accusing the company of violating state law against deceptive trade practices.\n“Temu purports to be an online shopping platform, but it is dangerous malware, surreptitiously granting itself access to virtually all data on a user’s cell phone,” Griffin alleges.\nTemu is the number one free shopping app on the Apple App Store and Google Play Store and is owned by PDD Holdings, which also runs a popular app called Pinduoduo. PDD was based in China until last year, when it moved its headquarters to Ireland. The lawsuit tees up its allegations against Temu with a description of those against Pinduoduo, which researchers believed could spy on users, according to CNN, and which the Google Play Store suspended at one point in 2023 due to security concerns with “Off-Play versions of the app.”\nArkansas alleges that Temu, which was heavily marketed in the US, was modeled off of Pinduoduo. \n“Temu’s conduct came to light following the removal of the Pinduoduo app from Google’s Play Store due to the presence of malware that exploited vulnerabilities in users’ phone operating systems and allowed the app not only to gain undetected access to virtually all data stored on the phones, but also to recompile itself and potentially change its properties once installed, in a manner designed to avoid detection,” the lawsuit claims, pointing to concerns from Apple about Temu’s compliance with data security transparency standards. Apple told Politico last year the app was available on its app store after resolving the concerns.\nThe lawsuit alleges that Temu’s app may be even more dangerous than Pinduoduo’s. It cites an article from Grizzly Research, a firm “focused on producing differentiated research insights on publicly traded companies through in-depth due diligence.” The lawsuit cites findings in the report that “the Temu app has the capability to hack users’ phones and override data privacy settings that users have purposely set to prevent their data from being accessed.”\nThe AG claims that Temu collects far more data than necessary to run a shopping app, including sensitive or personally identifiable information. For example, the suit alleges that Temu misleads users in its requests to access information, such as location, when uploading a photo. “A reasonable consumer would assume that the location permission is confined to the use of photo uploads. The permission, however, extends to any time the user engages with the Temu app,” the suit claims. It also alleges that Temu “sneaks” permissions to access audio and visual recording and storage on a device.\nTemu, Google, and Apple did not immediately respond to requests for comment.\n / Sign up for Verge Deals to get deals on products we've tested sent to your inbox weekly.\nThe Verge is a vox media network\n© 2024 Vox Media, LLC. All Rights Reserved",
+    "translation": "",
+    "transformed_representation": [
+        "AI",
+        "malware",
+        "data privacy",
+        "online shopping",
+        "app security",
+        "e-commerce",
+        "PDD Holdings",
+        "Temu",
+        "Apple App Store",
+        "Google Play Store",
+        "Pinduoduo",
+        "cybersecurity",
+        "technology policy",
+        "privacy concerns",
+        "data protection",
+        "consumer protection",
+        "deceptive trade practices",
+        "Arkansas Attorney General",
+        "Tim Griffin"
+    ],
+    "detected_language": "en"
+}

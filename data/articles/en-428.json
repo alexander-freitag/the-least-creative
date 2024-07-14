@@ -1,0 +1,27 @@
+{
+    "title": "This new Mac app uses animated flies to tell you when to take out the trash",
+    "timestamp": "2024-06-30T21:42:16Z",
+    "content": "By  Wes Davis, a weekend editor who covers the latest in tech and entertainment. He has written news, reviews, and more as a tech journalist since 2020.\nI don’t think I’m going out on a limb when I say that not everyone agrees on the best way to handle their computer’s trash directory. Some folks like to let it go until their computer yells at them about storage, while others empty it every single day. I’m somewhere in the middle, but I do try not to let it go too far. And I think I found the best tool for that job a couple of days ago: Bananabin.\nWhen the data kept in your Trash folder passes a certain threshold, Bananabin surrounds with buzzing, animated flies that you can shoo away with your mouse. That’s it. That’s the app.\nYou can configure the fly threshold from the app’s icon in the menu bar; the three options are Janitor Mode (10MB),  The Recycler (1GB), and Garbage Hoarder (10GB). The app free right now, while it’s in beta. Leon Schrijvers, one of Bananabin’s developers, told The Verge via email that they plan to charge a small, as-yet-undetermined one-time fee for the release version. \nSchrijvers added that they’re still working out some bugs (heh). The current version of the app ignores iCloud Drive trash folders, and “if you use an external drive, then the bin of this drive is also ignored,” Schrijvers wrote. Also, it only works for macOS Sonoma at the moment, though they’re looking into adding support for macOS Ventura later.\nSomething to note: Bananabin requires accessibility and full disk access permissions to work. Schrijvers explained:\nFor BananaBin, we need accessibility permission to read out the position of the bin in the dock. As for the full disk access, we need this so that we can calculate the disk space that the bin is taking up. When this space is larger than the configured threshold, then the flies will appear.\nIf that’s fine by you, you can try the app by heading to Bananabin’s website (here’s the link one more time). You have to provide an email address to get a download link.  \nUpdate June 30th, 2024, 6:45PM ET: Added additional details provided by app developer Leon Schrijvers.\n / Sign up for Verge Deals to get deals on products we've tested sent to your inbox weekly.\nThe Verge is a vox media network\n© 2024 Vox Media, LLC. All Rights Reserved",
+    "translation": "",
+    "transformed_representation": [
+        "Tags: tech",
+        "technology",
+        "computer",
+        "trash directory",
+        "app",
+        "software",
+        "macOS",
+        "Sonoma",
+        "Ventura",
+        "accessibility",
+        "full disk access",
+        "permission",
+        "beta",
+        "free",
+        "one-time fee",
+        "bugs",
+        "iCloud Drive",
+        "external drive"
+    ],
+    "detected_language": "en"
+}
