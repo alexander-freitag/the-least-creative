@@ -61,7 +61,8 @@ def detect_language(text):
         detected_lang = detect(text)
         lang_map = {
             'de': 'de',
-            'bg': 'bg'
+            'bg': 'bg',
+            'en': 'en'
         }
         # Return either "bg", "de", "en" or "unknown" if it isn't one of the three languages.
         return lang_map.get(detected_lang, 'en')
