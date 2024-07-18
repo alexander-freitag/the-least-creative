@@ -5,12 +5,15 @@ import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, pipeline
 from langdetect import DetectorFactory, LangDetectException, detect
 
-# Load the fine-tuned model and tokenizer
-model_de = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-de-en")
-tokenizer_de = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-de-en")
-model_bg = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-bg-en")
-tokenizer_bg = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-bg-en")
+from user_config import BG_MODEL_PATH, DE_MODEL_PATH
 
+# Load the fine-tuned model and tokenizer
+
+# Load the fine-tuned model and tokenizer
+model_de = AutoModelForSeq2SeqLM.from_pretrained(DE_MODEL_PATH)
+tokenizer_de = AutoTokenizer.from_pretrained(DE_MODEL_PATH)
+model_bg = AutoModelForSeq2SeqLM.from_pretrained(BG_MODEL_PATH)
+tokenizer_bg = AutoTokenizer.from_pretrained(BG_MODEL_PATH)
 device = 0 if torch.cuda.is_available() else -1
 # Create a translation pipeline
 translation_pipeline_de_en = pipeline("translation_de_to_en", model=model_de, tokenizer=tokenizer_de, device=device)

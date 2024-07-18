@@ -8,3 +8,7 @@ DATASET_PATH = "data/dataset.json"
 
 # Default path to the directory containing query results
 QUERIES_PATH = "data/queries/"
+
+# Paths to translation models
+DE_MODEL_PATH = "models/opus-mt-de-en"
+BG_MODEL_PATH = "models/opus-mt-bg-en"
